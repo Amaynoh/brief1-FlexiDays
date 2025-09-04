@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demande de Congé - FlexiDays</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="Demande-de-conge.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'flexi-blue': '#B4CDE6',
+            'flexi-dark': '#343A40'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  <nav class="bg-flexi-blue shadow-lg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+                    <img src="./asseste/logo.png" 
+                         alt="Logo FlexiDays" 
+                         class="h-14 w-50">
+                </div>
+        
+        <!-- Navigation Links - Desktop -->
+        <ul class="hidden md:flex space-x-8">
+          <li>
+            <a href="dashboard.html" 
+               class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+               Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="Mes-conges.html" 
+               class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+               Mes Congés
+            </a>
+          </li>
+          <li>
+            <a href="#" 
+               class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+               Demande de Congé
+            </a>
+          </li>
+          <li>
+            <a href="Administrateur.html" 
+               class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+               Administration
+            </a>
+          </li>
+        </ul>
+
+        <!-- Menu Mobile -->
+        <div class="md:hidden">
+          <input type="checkbox" id="mobile-menu-toggle" class="hidden">
+          <label for="mobile-menu-toggle" class="cursor-pointer flex flex-col justify-center items-center w-8 h-8">
+            <span class="hamburger-line block w-6 h-0.5 bg-flexi-dark mb-1.5"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-flexi-dark mb-1.5"></span>
+            <span class="hamburger-line block w-6 h-0.5 bg-flexi-dark"></span>
+          </label>
+          
+          <div id="mobile-menu" class="absolute top-16 left-0 right-0 bg-white shadow-lg z-10">
+            <div class="px-4 py-3 space-y-2">
+              <a href="dashboard.html" 
+                 class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-flexi-blue">
+                 Dashboard
+              </a>
+              <a href="Mes-conges.html" 
+                 class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-flexi-blue">
+                 Mes Congés
+              </a>
+              <a href="Demande-de-conge.html" 
+                 class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-flexi-blue">
+                 Demande de Congé
+              </a>
+              <a href="administration.html" 
+                 class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-flexi-blue">
+                 Administration
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<body>
+   <div class="form-container">
+        <h2 class="form-title">Formulaire de Demande de Congé</h2>
+        <form>
+            <div class="form-group">
+                <label for="nom">Nom complet :</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Type de congé :</label>
+                <select id="type" name="type" required>
+                    <option value="">Sélectionnez un type</option>
+                    <option value="annuel">Congé annuel</option>
+                    <option value="maladie">Congé maladie</option>
+                    <option value="exceptionnel">Congé exceptionnel</option>
+                    <option value="maternite">Congé maternité</option>
+                    <option value="paternite">Congé paternité</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="form-group">
+                    <label for="debut">Date de début :</label>
+                    <input type="date" id="debut" name="debut" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fin">Date de fin :</label>
+                    <input type="date" id="fin" name="fin" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="motif">Motif (optionnel) :</label>
+                <textarea id="motif" name="motif" placeholder="Décrivez brièvement la raison de votre congé"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
+        </form>
+    </div>
+</body>
+</html>
+
+  <footer class="bg-flexi-dark text-white mt-auto">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Informations de contact -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Informations de contact</h3>
+          <div class="space-y-3 text-gray-300">
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-flexi-blue"></i>
+              <p>123 Rue Exemple, Ville, Pays</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-phone mr-3 text-flexi-blue"></i>
+              <p>+212 234 567 890</p>
+            </div>
+            <div class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-flexi-blue"></i>
+              <p>contact@exemple.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Liens rapides -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Liens rapides</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="dachboard.html" 
+                 class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                 Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="Mes-conges.html" 
+                 class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                 Mes Congés
+              </a>
+            </li>
+            <li>
+              <a href="#Demande-de-conge" 
+                 class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                 Demande de Congé
+              </a>
+            </li>
+            <li>
+              <a href="administration.html" 
+                 class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                 Administration
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
+          <div class="flex space-x-4">
+            <a href="#" 
+               aria-label="Facebook"
+               class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                <i class="fab fa-facebook text-2xl"></i>
+            </a>
+            <a href="#" 
+               aria-label="Twitter"
+               class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="#" 
+               aria-label="LinkedIn"
+               class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="#" 
+               aria-label="Instagram"
+               class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-8 pt-8 border-t border-gray-600 text-center">
+        <p class="text-gray-400">© 2023 FlexiDays. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiDays - Navbar et Footer avec Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="dachbord.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'flexi-blue': '#B4CDE6',
+                        'flexi-dark': '#343A40'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-flexi-blue shadow-lg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="./asseste/logo.png" 
+                         alt="Logo FlexiDays" 
+                         class="h-14 w-50">
+                </div>
+                
+                <!-- Navigation Links - Desktop -->
+                <ul class="hidden md:flex space-x-8">
+                    <li>
+                        <a href="#dashboard" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Mes-conges.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Mes Congés
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Demande-de-conge.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Demande de Congé
+                        </a>
+                    </li>
+                    <li>
+                        <a href="administration.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Administration
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Menu Mobile - CSS pur avec checkbox -->
+                <div class="md:hidden">
+                    <input type="checkbox" id="menu-toggle" class="hidden peer">
+                    <label for="menu-toggle" class="cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:opacity-0"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Menu Mobile - Caché par défaut -->
+            <div class="md:hidden">
+                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+                <label for="mobile-menu-toggle" class="md:hidden cursor-pointer absolute top-4 right-4 z-10">
+                    <div class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:opacity-0"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
+                    </div>
+                </label>
+                
+                <div class="peer-checked:block hidden bg-flexi-blue bg-opacity-95 absolute left-0 right-0 top-16 shadow-lg">
+                    <div class="px-4 py-3 space-y-2">
+                        <a href="#" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Dashboard
+                        </a>
+                        <a href="Mes-conges.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Mes Congés
+                        </a>
+                        <a href="Demande-de-conge.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Demande de Congé
+                        </a>
+                        <a href="administration.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Administration
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <body>
+    <div class="titre">
+        <h1>Mon Espace Congés</h1>
+        <h2>« Planifiez, demandez, profitez »</h2>
+    </div>
+
+    <div class="alerte">
+        <h2><span class="alerte-icone"><i class="fas fa-exclamation-triangle"></i></span>Notification Importante</h2>
+        <p>Les demandes de congé doivent être faites au moins 2 semaines avant.</p>
+    </div>
+    <div class="boutons-container">
+            <a href="Mes-conges.html" class="bouton bouton-primaire">
+                <i class="fas fa-calendar-alt"></i> Mes congés
+            </a>
+            <a href="Demande-de-conge.html" class="bouton bouton-secondaire">
+                <i class="fas fa-paper-plane"></i> Demande de congé
+            </a>
+    </div>
+    <div class="cards">
+        <section class="card">
+            <h1>Solde de congés <span class="icon"><i class="fas fa-calendar-alt"></i></span></h1>
+            <ul>
+                <li>Congés payés <span class="badge">22 jours</span></li>
+                <li>RTT <span class="badge">5 jours</span></li>
+                <li>Congés maladie <span class="badge">10 jours</span></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h1>Demandes en cours <span class="icon"><i class="fas fa-clock"></i></span></h1>
+            <ul>
+                <li>En attente <span class="badge">2</span></li>
+                <li>Approuvées <span class="badge">3</span></li>
+                <li>Refusées <span class="badge">0</span></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h1>Prochains congés <span class="icon"><i class="fas fa-plane"></i></span></h1>
+            <ul>
+                <li>Congés d'été <span class="badge">15/07 - 30/07</span></li>
+                <li>Pont de mai <span class="badge">01/05 - 04/05</span></li>
+            </ul>
+        </section>
+    </div>
+    <div class="boutons-container">
+            <a href="Mes-conges.html" class="bouton bouton-primaire">
+                <i class="fas fa-calendar-alt"></i> Mes congés
+            </a>
+            <a href="Demande-de-conge.html" class="bouton bouton-secondaire">
+                <i class="fas fa-paper-plane"></i> Demande de congé
+            </a>
+    </div>
+</body>
+</html>
+    <!-- Footer -->
+    <footer class="bg-flexi-dark text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Informations de contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informations de contact</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-flexi-blue"></i>
+                            <p>123 Rue Exemple, Ville, Pays</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-flexi-blue"></i>
+                            <p>+212 234 567 890</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-flexi-blue"></i>
+                            <p>contact@exemple.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liens rapides -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#dashboard" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Mes-conges.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Mes Congés
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Demande-de-conge.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Demande de Congé
+                            </a>
+                        </li>
+                        <li>
+                            <a href="administration.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Administration
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" 
+                           aria-label="Facebook"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="Twitter"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="LinkedIn"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="Instagram"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-gray-600 text-center">
+                <p class="text-gray-400">© 2023 FlexiDays. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

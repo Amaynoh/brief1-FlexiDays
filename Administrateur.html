@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiDays - Navbar et Footer avec Tailwind CSS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Administrateur.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'flexi-blue': '#B4CDE6',
+                        'flexi-dark': '#343A40'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-flexi-blue shadow-lg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="./asseste/logo.png" 
+                         alt="Logo FlexiDays" 
+                         class="h-15 w-60">
+                </div>
+                
+                <!-- Navigation Links - Desktop -->
+                <ul class="hidden md:flex space-x-8">
+                    <li>
+                        <a href="dachbord.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Mes-conges.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Mes Congés
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Demande-de-conge.html" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Demande de Congé
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" 
+                           class="relative text-flexi-dark font-medium px-3 py-2 rounded-md transition-all duration-300 hover:bg-white hover:bg-opacity-20 hover:-translate-y-0.5 before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-flexi-dark before:transition-all before:duration-300 hover:before:w-full hover:before:-translate-x-1/2">
+                           Administration
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Menu Mobile - CSS pur avec checkbox -->
+                <div class="md:hidden">
+                    <input type="checkbox" id="menu-toggle" class="hidden peer">
+                    <label for="menu-toggle" class="cursor-pointer flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:opacity-0"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Menu Mobile - Caché par défaut -->
+            <div class="md:hidden">
+                <input type="checkbox" id="mobile-menu-toggle" class="hidden peer">
+                <label for="mobile-menu-toggle" class="md:hidden cursor-pointer absolute top-4 right-4 z-10">
+                    <div class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:rotate-45 peer-checked:translate-y-2"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:opacity-0"></span>
+                        <span class="block w-6 h-0.5 bg-flexi-dark transition-all duration-300 peer-checked:-rotate-45 peer-checked:-translate-y-2"></span>
+                    </div>
+                </label>
+                
+                <div class="peer-checked:block hidden bg-flexi-blue bg-opacity-95 absolute left-0 right-0 top-16 shadow-lg">
+                    <div class="px-4 py-3 space-y-2">
+                        <a href="#dashboard" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Dashboard
+                        </a>
+                        <a href="Mes-conges.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Mes Congés
+                        </a>
+                        <a href="Demande-de-conge.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Demande de Congé
+                        </a>
+                        <a href="administration.html" 
+                           class="block text-flexi-dark font-medium px-3 py-2 rounded-md transition-colors duration-300 hover:bg-white hover:bg-opacity-20">
+                           Administration
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+ <main class="flex-grow py-8">
+        <div class="container">
+            <h1 class="page-title">Gestion des Demandes de Congé</h1>
+            
+            <div class="filters">
+                <div class="search-box">
+                    <i class="fas fa-search text-gray-400"></i>
+                    <input type="text" placeholder="Rechercher un employé...">
+                </div>
+                
+                <div class="status-filters">
+                    <div class="status-filter active">Tous</div>
+                    <div class="status-filter status-pending">En attente</div>
+                    <div class="status-filter status-approved">Approuvées</div>
+                    <div class="status-filter status-rejected">Refusées</div>
+                </div>
+            </div>
+            
+            <div class="requests-grid">
+                <!-- Carte 1 -->
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="employee-info">
+                            <div class="employee-avatar">JD</div>
+                            <div>
+                                <div class="employee-name">Jean Dupont</div>
+                                <div class="employee-department">Développement</div>
+                            </div>
+                        </div>
+                        <div class="request-status status-pending">En attente</div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Type de congé:</span>
+                                <span class="detail-value">Congé annuel</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Du:</span>
+                                <span class="detail-value">15/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Au:</span>
+                                <span class="detail-value">30/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Durée:</span>
+                                <span class="detail-value">12 jours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="request-motif">
+                            <span class="motif-label">Motif:</span>
+                            <p class="motif-text">Congés d'été en famille à la mer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <button class="btn btn-approve">
+                            <i class="fas fa-check mr-1"></i> Approuver
+                        </button>
+                        <button class="btn btn-reject">
+                            <i class="fas fa-times mr-1"></i> Refuser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Carte 2 -->
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="employee-info">
+                            <div class="employee-avatar">MS</div>
+                            <div>
+                                <div class="employee-name">Marie Martin</div>
+                                <div class="employee-department">Ressources Humaines</div>
+                            </div>
+                        </div>
+                        <div class="request-status status-approved">Approuvée</div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Type de congé:</span>
+                                <span class="detail-value">Congé maladie</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Du:</span>
+                                <span class="detail-value">10/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Au:</span>
+                                <span class="detail-value">14/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Durée:</span>
+                                <span class="detail-value">3 jours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="request-motif">
+                            <span class="motif-label">Motif:</span>
+                            <p class="motif-text">Arrêt maladie avec certificat médical.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <button class="btn btn-approve" disabled>
+                            <i class="fas fa-check mr-1"></i> Approuver
+                        </button>
+                        <button class="btn btn-reject">
+                            <i class="fas fa-times mr-1"></i> Refuser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Carte 3 -->
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="employee-info">
+                            <div class="employee-avatar">PL</div>
+                            <div>
+                                <div class="employee-name">Pierre Leroy</div>
+                                <div class="employee-department">Marketing</div>
+                            </div>
+                        </div>
+                        <div class="request-status status-pending">En attente</div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Type de congé:</span>
+                                <span class="detail-value">Congé exceptionnel</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Du:</span>
+                                <span class="detail-value">22/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Au:</span>
+                                <span class="detail-value">22/07/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Durée:</span>
+                                <span class="detail-value">1 jour</span>
+                            </div>
+                        </div>
+                        
+                        <div class="request-motif">
+                            <span class="motif-label">Motif:</span>
+                            <p class="motif-text">Mariage de mon frère.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <button class="btn btn-approve">
+                            <i class="fas fa-check mr-1"></i> Approuver
+                        </button>
+                        <button class="btn btn-reject">
+                            <i class="fas fa-times mr-1"></i> Refuser
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Carte 4 -->
+                <div class="request-card">
+                    <div class="card-header">
+                        <div class="employee-info">
+                            <div class="employee-avatar">SC</div>
+                            <div>
+                                <div class="employee-name">Sophie Chen</div>
+                                <div class="employee-department">Design</div>
+                            </div>
+                        </div>
+                        <div class="request-status status-rejected">Refusée</div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="request-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Type de congé:</span>
+                                <span class="detail-value">Congé annuel</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Du:</span>
+                                <span class="detail-value">01/08/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Au:</span>
+                                <span class="detail-value">15/08/2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Durée:</span>
+                                <span class="detail-value">11 jours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="request-motif">
+                            <span class="motif-label">Motif:</span>
+                            <p class="motif-text">Vacances en famille à l'étranger.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-actions">
+                        <button class="btn btn-approve">
+                            <i class="fas fa-check mr-1"></i> Approuver
+                        </button>
+                        <button class="btn btn-reject" disabled>
+                            <i class="fas fa-times mr-1"></i> Refuser
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+ <!-- Footer -->
+    <footer class="bg-flexi-dark text-white mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Informations de contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Informations de contact</h3>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-flexi-blue"></i>
+                            <p>123 Rue Exemple, Ville, Pays</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-flexi-blue"></i>
+                            <p>+212 234 567 890</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-flexi-blue"></i>
+                            <p>contact@exemple.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liens rapides -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#dashboard" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Mes-conges.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Mes Congés
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Demande-de-conge.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Demande de Congé
+                            </a>
+                        </li>
+                        <li>
+                            <a href="administration.html" 
+                               class="text-gray-300 hover:text-flexi-blue transition-colors duration-300">
+                               Administration
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" 
+                           aria-label="Facebook"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="Twitter"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="LinkedIn"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" 
+                           aria-label="Instagram"
+                           class="text-gray-300 hover:text-flexi-blue transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-gray-600 text-center">
+                <p class="text-gray-400">© 2023 FlexiDays. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

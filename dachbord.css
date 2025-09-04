@@ -1,0 +1,245 @@
+  /* Variables CSS */
+        :root {
+            --primary: #2563eb;
+            --secondary: #B4CDE6;
+            --dark: #343A40;
+            --light: #f8fafc;
+            --gray: #6b7280;
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --card-width: 1200px; /* Largeur des cartes */
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: var(--card-width);
+            margin: 0 auto;
+        }
+
+        /* Section titre */
+        .titre {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .titre h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary), #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .titre h2 {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Boutons */
+        .boutons-container {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: end;
+            margin-right: 185px;
+        }
+
+        .bouton {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            font-weight: 600;
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .bouton-primaire {
+            background: var(--primary);
+            color: white;
+        }
+
+        .bouton-secondaire {
+            background: #10b981;
+            color: white;
+        }
+
+        .bouton:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Alerte - MÊME LARGEUR QUE LES CARTES */
+        .alerte {
+            background: #dbeafe;
+            color: var(--dark);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin: 2rem auto;
+            width: 100%;
+            max-width: var(--card-width);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--primary);
+        }
+
+        .alerte h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .alerte-icone {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .alerte p {
+            font-size: 1.1rem;
+            padding-left: 3rem;
+        }
+
+        /* Cartes */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem auto;
+            width: 100%;
+            max-width: var(--card-width);
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+
+        .card h1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .card .icon {
+            font-size: 1.8rem;
+            background: var(--light);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            padding: 0.8rem 0;
+            color: var(--gray);
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .badge {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .titre {
+                padding: 2rem 1rem;
+            }
+            
+            .titre h1 {
+                font-size: 2rem;
+            }
+            
+            .boutons-container {
+                flex-direction: column;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .bouton {
+                width: 100%;
+            }
+            
+            .alerte {
+                margin: 1.5rem 0;
+                padding: 1.2rem;
+            }
+            
+            .alerte h2 {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .alerte p {
+                padding-left: 0;
+                text-align: center;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .card h1 {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
+            }
+            
+            .card .icon {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            :root {
+                --card-width: 95%;
+            }
+        }
+   
