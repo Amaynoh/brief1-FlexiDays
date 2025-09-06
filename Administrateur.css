@@ -4,7 +4,7 @@
             min-height: 100vh;
         }
 
-        /* Navigation améliorée */
+        
         .navbar {
             backdrop-filter: blur(10px);
             background: rgba(180, 205, 230, 0.95);
@@ -39,14 +39,14 @@
             color: #2563eb;
         }
 
-        /* Conteneur principal */
+       
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
-        /* Titre de la page */
+       
         .page-title {
             text-align: center;
             color: #1e293b;
@@ -72,7 +72,7 @@
             border-radius: 2px;
         }
 
-        /* Filtres */
+        
         .filters {
             display: flex;
             justify-content: space-between;
@@ -126,7 +126,7 @@
             background: #e5e7eb;
         }
 
-        /* Cartes des demandes */
+    
         .requests-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -252,7 +252,7 @@
             padding: 1rem 1.5rem;
             background: #f8fafc;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             gap: 0.75rem;
         }
 
@@ -283,7 +283,7 @@
             background: #dc2626;
         }
 
-        /* Menu mobile amélioré */
+
         #mobile-menu {
             display: none;
             animation: slideDown 0.3s ease forwards;
@@ -304,7 +304,6 @@
             display: block;
         }
 
-        /* Animation pour le menu hamburger */
         .hamburger-line {
             transition: all 0.3s ease;
         }
@@ -321,7 +320,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Footer amélioré */
+
         footer {
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -345,7 +344,7 @@
             color: #B4CDE6;
         }
 
-        /* Responsive design */
+        
         @media (max-width: 768px) {
             .filters {
                 flex-direction: column;

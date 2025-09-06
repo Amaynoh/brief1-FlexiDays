@@ -1,4 +1,4 @@
-  /* Variables CSS */
+   /* Variables CSS  */
         :root {
             --primary: #2563eb;
             --secondary: #B4CDE6;
@@ -7,16 +7,16 @@
             --gray: #6b7280;
             --radius: 12px;
             --transition: all 0.3s ease;
-            --card-width: 1200px; /* Largeur des cartes */
+            --card-width: 1200px;
         }
 
-        /* Conteneur principal */
+  
         .container {
             max-width: var(--card-width);
             margin: 0 auto;
         }
 
-        /* Section titre */
+
         .titre {
             display: flex;
             flex-direction: column;
@@ -46,11 +46,11 @@
             max-width: 600px;
         }
 
-        /* Boutons */
+        
         .boutons-container {
             display: flex;
             gap: 1rem;
-            margin: 1.5rem;
+            margin: 1.3rem;
             flex-wrap: wrap;
             justify-content: end;
             margin-right: 185px;
@@ -83,7 +83,7 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
-        /* Alerte - MÊME LARGEUR QUE LES CARTES */
+       
         .alerte {
             background: #dbeafe;
             color: var(--dark);
@@ -120,7 +120,7 @@
             padding-left: 3rem;
         }
 
-        /* Cartes */
+   
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,7 +186,7 @@
             font-weight: 600;
         }
 
-        /* Responsive */
+       
         @media (max-width: 768px) {
             .titre {
                 padding: 2rem 1rem;

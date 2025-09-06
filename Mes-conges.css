@@ -4,6 +4,15 @@
             grid-template-columns: 1fr 3fr;
             gap: 25px;
         }
+        h2 {
+           font-size: 24px;          
+           font-weight: bold;      
+           color: #343a40;          
+           margin-bottom: 20px;      
+           position: relative;       
+           display: inline-block;    
+           padding-bottom: 5px;      
+        }
         
         .summary {
             display: grid;
